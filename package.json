@@ -1,0 +1,24 @@
+{
+  "name": "usercrud_node_module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armiyants/userCRUD_node_module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Armiyants/userCRUD_node_module/issues"
+  },
+  "homepage": "https://github.com/Armiyants/userCRUD_node_module#readme",
+  "dependencies": {
+    "querystring": "^0.2.1",
+    "request": "^2.88.2"
+  }
+}
