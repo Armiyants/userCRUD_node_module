@@ -1,6 +1,8 @@
 import request from 'request';
 import qs from 'querystring';
 
+let baseURL = 'https://jsonplaceholder.typicode.com/users';
+
 export const findUser = function(searchObject) {
     if (Object.values(searchObject).length < 1) {
         return "Please provide at least one credential."
@@ -9,7 +11,7 @@ export const findUser = function(searchObject) {
     let queryParams = qs.stringify(searchObject);
 
 
-    request(`https://jsonplaceholder.typicode.com/users?${queryParams}`, { json: true }, (err, res, body) => {
+    request(`${baseURL}?${queryParams}`, { json: true }, (err, res, body) => {
         if (err) {
             return console.error(err);
         }
@@ -43,7 +45,7 @@ export const createUser = function(userCredentials) {
         return "Please provide at least one credential."
     }
 
-    request.post(`https://jsonplaceholder.typicode.com/users`, userCredentials, (err, res, body) => {
+    request.post(baseURL, userCredentials, (err, res, body) => {
         if (err) {
             return console.error(err);
         }
@@ -58,7 +60,7 @@ export const deleteUser = function(userId) {
         return "Please provide user ID."
     }
 
-    request.delete(`https://jsonplaceholder.typicode.com/users${userId}`, { json: true }, (err, res, body) => {
+    request.delete(`${baseURL}${userId}`, { json: true }, (err, res, body) => {
         if (err) {
             return console.error(err);
         }
